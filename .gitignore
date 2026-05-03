@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+.bis_index/
+.env
+data/dataset.pdf

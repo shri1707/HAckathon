@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BIS Standards Recommendation Engine</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>BIS Standards Recommendation Engine</h1>
+        <p>Find relevant building-material standards from BIS SP 21.</p>
+      </div>
+      <div class="status" id="status">Starting</div>
+    </header>
+
+    <main class="shell">
+      <section class="query-panel">
+        <label for="query">Product description</label>
+        <textarea id="query" rows="7" spellcheck="true">We are a small enterprise manufacturing 33 Grade Ordinary Portland Cement. Which BIS standard covers the chemical and physical requirements for our product?</textarea>
+
+        <div class="controls">
+          <label class="select-label" for="topK">Results</label>
+          <select id="topK">
+            <option value="3">Top 3</option>
+            <option value="5" selected>Top 5</option>
+            <option value="10">Top 10</option>
+          </select>
+          <button id="sampleBtn" type="button">Sample</button>
+          <button id="runBtn" type="button">Recommend</button>
+        </div>
+      </section>
+
+      <section class="results-panel">
+        <div class="result-head">
+          <h2>Recommendations</h2>
+          <span id="meta">No query run yet</span>
+        </div>
+        <ol class="results" id="results"></ol>
+        <pre class="json-output" id="jsonOutput">Output JSON will appear here.</pre>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

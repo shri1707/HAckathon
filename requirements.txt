@@ -1,0 +1,9 @@
+google-genai>=1.0.0
+fastapi>=0.115.0
+langgraph>=0.2.60
+pypdf>=6.0.0
+sentence-transformers>=3.0.0
+numpy>=1.24.0
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+uvicorn>=0.30.0
