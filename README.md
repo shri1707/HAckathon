@@ -176,6 +176,28 @@ python inference.py --input "C:\Users\shri1\Downloads\public_test_set.json" --ou
 
 The first run builds the embedding index and may take longer. Later runs reuse `.bis_index/`.
 
+## Generated Files And Git
+
+The `.bis_index/` directory is generated automatically from `dataset.pdf`. It contains extracted chunks, embeddings, and cache metadata:
+
+```text
+.bis_index/chunks.json
+.bis_index/embeddings.npy
+.bis_index/manifest.json
+```
+
+This directory is intentionally ignored by git and does not need to be committed. If `.bis_index/` is missing, the app rebuilds it on the next run as long as `dataset.pdf` is available.
+
+Commit the source files, frontend files, README, requirements, and `.env.example`. Do not commit `.env`, `.bis_index/`, Python cache files, or generated result files such as `data/public_results.json`.
+
+For a clean run on another machine or by judges, make sure the dataset PDF is available at:
+
+```text
+data/dataset.pdf
+```
+
+or set `BIS_DATASET_PATH` to the dataset location.
+
 ## Running The Web UI
 
 Start the server:
